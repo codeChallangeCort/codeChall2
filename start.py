@@ -3,11 +3,13 @@ import json
 import sys
 
 
-# waiting for an input from user and should be file_name.csv"
+# script would take args list for input files."
 
 try:
-    print("Please provide the input files: ")
-    filenames = sys.argv[1]
+    parsed_files = []
+    for each_file in sys.argv[1:]:  
+        parsed_files.append(each_file)
+    print("Total Files parsed: ", parsed_files)   
 except Exception as e:
     sys.exit()
 
@@ -57,8 +59,8 @@ def getInfo(row):
     
 # If more than one filesname has been passed with "," then for each file data would be readed and stored into json_data.
     
-for filename in filenames.split(","):
-    df = pd.read_csv(filename)
+for parsed_file in parsed_files:
+    df = pd.read_csv(parsed_file)
     json_data["user_list_size"] += len(df)
     df.apply(lambda x: getInfo(x),axis=1)
 
