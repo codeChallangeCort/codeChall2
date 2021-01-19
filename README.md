@@ -18,7 +18,7 @@ A very basic JSON format for the output has been proposed by the data warehouse 
 This application must be written using a modern, flexible scripting language such as Python, Ruby, or Perl. A sample input file named pipeline_input_user_export-vx.csv is included with this problem statement.
 
 
-###### n1.csv and n2.csv are the sample input files.
+###### n1.csv and n2.csv are the sample input files in the folder for testing purpose.
 
 ```
 python start.py filename.csv filename.csv
